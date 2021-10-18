@@ -17,12 +17,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
 </head>
 
 <body>
 
     <center>
-        <p class="title_header">Login</p>
+        <p class="title_header">Holla User!</p>
 
 
         <div class="tab_buttons">
@@ -49,7 +51,6 @@
     </center>
 
     <script>
-
         function openPage(pageName, elmnt, color = "orange") {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
@@ -70,8 +71,7 @@
 
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
+
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -87,9 +87,8 @@
             measurementId: "G-RQM88V4N7F"
         };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        firebase.initializeApp(firebaseConfig);
+        
     </script>
 
     <script src="../js/auth.js"></script>

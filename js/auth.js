@@ -26,7 +26,8 @@ function signup() {
             // Signed in 
             var user = userCredential.user;
             // ...
-            window.alert(user);
+            window.alert("User : " + user);
+            window.alert("UID : " + user.uid);
 
         })
         .catch((error) => {
