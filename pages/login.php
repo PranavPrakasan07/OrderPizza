@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/navbar.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -41,6 +42,8 @@
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
 
+            <div class="black_button" onclick="signup()">Signup</div>
+
         </div>
 
     </center>
@@ -64,6 +67,32 @@
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
     </script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyB9E3uFoTlipw5i6Kx0P8dQLYyMhVtgUPs",
+            authDomain: "orderpizza-a21be.firebaseapp.com",
+            projectId: "orderpizza-a21be",
+            storageBucket: "orderpizza-a21be.appspot.com",
+            messagingSenderId: "950362202077",
+            appId: "1:950362202077:web:4118e6014f4f579fa2a034",
+            measurementId: "G-RQM88V4N7F"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <script src="../js/auth.js"></script>
 
 </body>
 
