@@ -63,6 +63,7 @@ p{
     display: flex;
     background-color: orange;
     border-radius: 25px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
 }
