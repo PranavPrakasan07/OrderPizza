@@ -19,8 +19,6 @@ function signup() {
     var userEmail = document.getElementById('email').value;
     var userPassword = document.getElementById('password').value;
 
-    window.alert(userEmail + userPassword);
-
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
         .then((userCredential) => {
             // Signed in 
@@ -44,13 +42,11 @@ function signin() {
     var userEmail = document.getElementById('email').value;
     var userPassword = document.getElementById('password').value;
 
-    window.alert(userEmail + userPassword);
-
     firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
         .then((userCredential) => {
             // Signed in
             var user = userCredential.user;
-            window.alert(user);
+            window.alert(user.uid);
         })
         .catch((error) => {
             var errorCode = error.code;

@@ -11,6 +11,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/navbar.css">
@@ -26,27 +27,33 @@
     <center>
         <p class="title_header">Holla User!</p>
 
-
         <div class="tab_buttons">
             <div class="tablink" onclick="openPage('Login', this)">Login</div>
             <div class="tablink" onclick="openPage('Signup', this)" id="defaultOpen">Signup</div>
         </div>
 
         <div id="Login" class="tabcontent">
-            <h3>Home</h3>
-            <p>Home is where the heart is..</p>
+            <label for="email">Email</label><br>
+            <input class="form_input" type="email" name="email" id="email" placeholder="user@gmail.com"><br><br>
+
+            <label for="password">Password</label><br>
+            <input class="form_input" type="password" name="password" id="password" placeholder="Password"><br><br>
+
+            <div class="black_button" onclick="signin()">Login</div>
+
         </div>
 
         <div id="Signup" class="tabcontent">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
+            <label for="email">Email</label><br>
+            <input class="form_input" type="email" name="email" id="email" placeholder="user@gmail.com"><br><br>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <label for="password">Password</label><br>
+            <input class="form_input" type="password" name="password" id="password" placeholder="Password"><br><br>
 
             <div class="black_button" onclick="signup()">Signup</div>
 
         </div>
+
 
     </center>
 
@@ -88,7 +95,6 @@
         };
 
         firebase.initializeApp(firebaseConfig);
-        
     </script>
 
     <script src="../js/auth.js"></script>

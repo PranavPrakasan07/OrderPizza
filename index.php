@@ -246,7 +246,7 @@
                     <br>
 
                     <div class="subscribe">
-                        <input type="email" name="email" placeholder="me@gmail.com">
+                        <input class="footer_input" type="email" name="email" placeholder="me@gmail.com">
                     </div>
 
                 </div>
