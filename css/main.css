@@ -56,6 +56,17 @@ p{
     align-items: center;
 }
 
+.flex-item-right_spl {
+    flex: 50%;
+    vertical-align: middle;
+    margin: 16px 16px 16px 16px;
+    display: flex;
+    background-color: orange;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex-item-left #block_1 {
     vertical-align: middle;
     padding: 0px 16px 0px 16px;
