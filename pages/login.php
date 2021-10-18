@@ -33,22 +33,22 @@
         </div>
 
         <div id="Login" class="tabcontent">
-            <label for="email">Email</label><br>
-            <input class="form_input" type="email" name="email" id="email" placeholder="user@gmail.com"><br><br>
+            <label for="email_l">Email</label><br>
+            <input class="form_input" type="email" name="email" id="email_l" placeholder="user@gmail.com"><br><br>
 
-            <label for="password">Password</label><br>
-            <input class="form_input" type="password" name="password" id="password" placeholder="Password"><br><br>
+            <label for="password_l">Password</label><br>
+            <input class="form_input" type="password" name="password" id="password_l" placeholder="Password"><br><br>
 
             <div class="black_button" onclick="signin()">Login</div>
 
         </div>
 
         <div id="Signup" class="tabcontent">
-            <label for="email">Email</label><br>
-            <input class="form_input" type="email" name="email" id="email" placeholder="user@gmail.com"><br><br>
+            <label for="email_s">Email</label><br>
+            <input class="form_input" type="email" name="email" id="email_s" placeholder="user@gmail.com"><br><br>
 
-            <label for="password">Password</label><br>
-            <input class="form_input" type="password" name="password" id="password" placeholder="Password"><br><br>
+            <label for="password_s">Password</label><br>
+            <input class="form_input" type="password" name="password" id="password_s" placeholder="Password"><br><br>
 
             <div class="black_button" onclick="signup()">Signup</div>
 
