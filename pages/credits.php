@@ -52,6 +52,10 @@
                         href="https://lottiefiles.com/22795-pizza-slice">https://lottiefiles.com/22795-pizza-slice</a>
                 </p>
 
+                <p><a class="credit_content"
+                        href="https://lottiefiles.com/67226-food-app-interaction">https://lottiefiles.com/67226-food-app-interaction</a>
+                </p>
+
                 <p><a class="credit_content" 
                     href="https://www.vecteezy.com/free-vector/pizza">Pizza Vectors by Vecteezy</a>
                 </p>
