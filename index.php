@@ -60,7 +60,7 @@
 
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets6.lottiefiles.com/packages/lf20_rvfycj0u.json"
-                background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
     </div>
 
@@ -79,7 +79,7 @@
 
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets1.lottiefiles.com/packages/lf20_ngfmgkrn.json"
-                background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
     </div>
 
@@ -243,7 +243,6 @@
 
 
                     <p class="content">Subscribe</p>
-                    <br>
 
                     <div class="subscribe">
                         <input class="footer_input" type="email" name="email" placeholder="me@gmail.com">

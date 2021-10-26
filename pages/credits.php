@@ -32,8 +32,7 @@
                 <br>
 
                 <p class="tagline">Codepen</p>
-                <p><a class="credit_content"
-                        href="https://codepen.io/aija/pen/xvXWoK">https://codepen.io/aija/pen/xvXWoK</a></p>
+                <p><a class="credit_content" href="https://codepen.io/aija/pen/xvXWoK">https://codepen.io/aija/pen/xvXWoK</a></p>
             </div>
         </div>
 
@@ -41,38 +40,30 @@
             <div class="block_1">
                 <p class="tagline">Lottie </p>
 
-                <p><a class="credit_content"
-                        href="https://lottiefiles.com/65717-pizza-delivery">https://lottiefiles.com/65717-pizza-delivery</a>
+                <p><a class="credit_content" href="https://lottiefiles.com/65717-pizza-delivery">https://lottiefiles.com/65717-pizza-delivery</a>
                 </p>
-                <p><a class="credit_content"
-                        href="https://lottiefiles.com/64809-pizza-loading">https://lottiefiles.com/64809-pizza-loading</a>
+                <p><a class="credit_content" href="https://lottiefiles.com/64809-pizza-loading">https://lottiefiles.com/64809-pizza-loading</a>
                 </p>
 
-                <p><a class="credit_content"
-                        href="https://lottiefiles.com/22795-pizza-slice">https://lottiefiles.com/22795-pizza-slice</a>
+                <p><a class="credit_content" href="https://lottiefiles.com/22795-pizza-slice">https://lottiefiles.com/22795-pizza-slice</a>
                 </p>
 
-                <p><a class="credit_content"
-                        href="https://lottiefiles.com/67226-food-app-interaction">https://lottiefiles.com/67226-food-app-interaction</a>
+                <p><a class="credit_content" href="https://lottiefiles.com/67226-food-app-interaction">https://lottiefiles.com/67226-food-app-interaction</a>
                 </p>
 
-                <p><a class="credit_content" 
-                    href="https://www.vecteezy.com/free-vector/pizza">Pizza Vectors by Vecteezy</a>
+                <p><a class="credit_content" href="https://www.vecteezy.com/free-vector/pizza">Pizza Vectors by Vecteezy</a>
                 </p>
 
-                <p><a class="credit_content" 
-                    href="https://www.vecteezy.com/vector-art/1268523-fresh-delicious-pizza">Pizza Vectors by Vecteezy</a>
+                <p><a class="credit_content" href="https://www.vecteezy.com/vector-art/1268523-fresh-delicious-pizza">Pizza Vectors by Vecteezy</a>
                 </p>
 
-                <p><a class="credit_content" 
-                    href="https://www.vecteezy.com/vector-art/227806-top-view-pizza-fresh-italian-margherita">Pizza Vectors by Vecteezy</a>
+                <p><a class="credit_content" href="https://www.vecteezy.com/vector-art/227806-top-view-pizza-fresh-italian-margherita">Pizza Vectors by Vecteezy</a>
                 </p>
 
-                <p><a class="credit_content" 
-                href='https://www.freepik.com/vectors/food'>Food vector created by macrovector - www.freepik.com</a>
+                <p><a class="credit_content" href='https://www.freepik.com/vectors/food'>Food vector created by macrovector - www.freepik.com</a>
                 </p>
 
-                
+
 
             </div>
 
@@ -98,26 +89,26 @@
 
                     <div class="icons_block">
 
-                        <a class="icons" href="#"><img src="images/icons/facebook.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="images/icons/github.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="images/icons/instagram.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/github.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px" height="32px"></a>
 
                     </div>
 
                     <div class="icons_block">
 
-                        <a class="icons" href="#"><img src="images/icons/google.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="images/icons/linkedin.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="images/icons/youtube.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/google.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/youtube.svg" width="32px" height="32px"></a>
 
                     </div>
 
 
                     <p class="content">Subscribe</p>
-                    <br>
+
 
                     <div class="subscribe">
-                        <input type="email" name="email" placeholder="me@gmail.com">
+                        <input type="email" class="footer_input" name="email" placeholder="me@gmail.com">
                     </div>
 
                 </div>
