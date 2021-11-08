@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="../css/specials_carousal.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +31,7 @@
 
     <!-- Navbar starts here -->
 
-    <div class="navbar" id="navbar">
+    <!-- <div class="navbar" id="navbar">
         <div id="hoverable">
             <a href="#Home"> </a>
             <a href="#Order">Order</a>
@@ -40,10 +43,31 @@
         <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
             <i class="fa fa-bars"></i>
         </a>
-    </div>
+    </div> -->
 
     <!-- Navbar ends here -->
 
+        <!-- NavBar Close Button -->
+        <div class="hamburger" onclick="toggleNavBar(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+
+    </div>
+
+    <!-- Navbar -->
+    <center>
+        <div class="topnav" id="topnav">
+
+            <a href="../index.php">Home</a>
+            <a href="#Order">Order</a>
+            <a href="#Specials">Specials</a>
+            <a href="#Benefits">Benefits</a>
+            <a href="#Contact">Contact</a>
+            <a href="login.php">Login</a>
+
+        </div>
+    </center>
 
     <div class="flex-container" id="Benefits">
 
@@ -68,55 +92,50 @@
 
     <!-- Carousal starts here -->
 
+    <div class="flex-container">
+        <div class="carousal-item">
+            THIS
+        </div>
+        <div class="carousal-item">
+            THIS
+        </div>
+        <div class="carousal-item">
+            THIS
+        </div>
+        <div class="carousal-item">
+            THIS
+        </div>
+        <div class="carousal-item">
+            THIS
+        </div>
+    </div>
+
+
     <!-- Carousal ends here -->
 
+    <!-- Carousal Script begins here -->
+
+    <!-- Carousal Script ends here -->
+
+    <!-- Navbar toggle script -->
     <script>
-        (function() {
-            // setup your carousels as you normally would using JS
-            // or via data attributes according to the documentation
-            // https://getbootstrap.com/javascript/#carousel
-            $("#carousel123").carousel({
-                interval: 2000
-            });
-            $("#carouselABC").carousel({
-                interval: 3600
-            });
-        })();
+        function toggleNavBar(t) {
 
-        (function() {
-            $(".carousel-showmanymoveone .item").each(function() {
-                var itemToClone = $(this);
+            toggle(t)
 
-                for (var i = 1; i < 4; i++) {
-                    itemToClone = itemToClone.next();
-
-                    // wrap around if at end of item collection
-                    if (!itemToClone.length) {
-                        itemToClone = $(this).siblings(":first");
-                    }
-
-                    // grab item, clone, add marker class, add to collection
-                    itemToClone
-                        .children(":first-child")
-                        .clone()
-                        .addClass("cloneditem-" + i)
-                        .appendTo($(this));
-                }
-            });
-        })();
-    </script>
-
-    <script>
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function toggleNavbar() {
-            var x = document.getElementById("navbar");
-            if (x.className === "navbar") {
+            var x = document.getElementById("topnav");
+            if (x.className === "topnav") {
                 x.className += " responsive";
             } else {
-                x.className = "navbar";
+                x.className = "topnav";
             }
         }
+
+        function toggle(x) {
+            x.classList.toggle("change");
+        }
     </script>
+
 
 </body>
 
