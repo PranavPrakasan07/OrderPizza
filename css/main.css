@@ -184,6 +184,9 @@ a {
     margin: 0px 16px 0px 16px;
 }
 
+a:hover{
+    color: #1f1f1f;
+}
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
 

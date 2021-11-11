@@ -8,9 +8,11 @@
     <title>Welcome</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/carousal.css">
-    <link rel="stylesheet" href="css/navbar.css">
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/carousal.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -277,17 +279,26 @@
     </div>
     <!-- Footer end here -->
 
+
+    <!-- Navbar toggle script -->
     <script>
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-        function toggleNavbar() {
-            var x = document.getElementById("navbar");
-            if (x.className === "navbar") {
+        function toggleNavBar(t) {
+
+            toggle(t)
+
+            var x = document.getElementById("topnav");
+            if (x.className === "topnav") {
                 x.className += " responsive";
             } else {
-                x.className = "navbar";
+                x.className = "topnav";
             }
         }
+
+        function toggle(x) {
+            x.classList.toggle("change");
+        }
     </script>
+
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
