@@ -126,52 +126,6 @@ a {
     color: white;
 }
 
-.fa {
-    padding: 20px;
-    margin: 5px;
-    font-size: 100px;
-    width: 75px;
-}
-
-/* .fa {
-    padding: 20px;
-    margin: 5px;
-    font-size: 100px;
-    width: 75px;
-} */
-
-.fa {
-    padding: 20px;
-    text-align: center;
-    margin: 5px 2px;
-    font-size: 30px;
-    width: 50px;
-}
-
-.fa-facebook {
-    color: white;
-}
-
-.fa-linkedin {
-    color: white;
-}
-
-.fa-instagram {
-    color: white;
-}
-
-.fa-youtube {
-    color: white;
-}
-
-.fa-google {
-    color: white;
-}
-
-.fa:hover {
-    opacity: 0.9;
-}
-
 .icons_block {
     color: white;
     display: flex;
@@ -258,6 +212,4 @@ a {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-
-
 }

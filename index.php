@@ -74,8 +74,6 @@
             </div>
         </div>
         <div class="flex-item-right">
-
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets6.lottiefiles.com/packages/lf20_rvfycj0u.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
     </div>
@@ -92,8 +90,6 @@
             </div>
         </div>
         <div class="flex-item-right">
-
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets1.lottiefiles.com/packages/lf20_ngfmgkrn.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
     </div>
@@ -114,7 +110,7 @@
             </div>
         </div>
 
-        <div class="flex-item-right_spl">
+        <div class="flex-item-right">
 
             <div class='wrapper'>
                 <div class='carousel'>
@@ -209,22 +205,16 @@
     <!-- Carousal ends here -->
 
     <div class="flex-container" id="Benefits">
-
         <div class="flex-item-left">
-
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="figma_lottie" src="https://assets10.lottiefiles.com/packages/lf20_IYNhoR.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <div class="block_1">
+                <p class="sub_title">Health? ❤️</p>
+                <p class="content">Enjoy home-made tasty food</p>
+                <div class="black_button"><a href="./pages/benefits.php">Give me Tips</a></div>
+            </div>
         </div>
 
         <div class="flex-item-right">
-            <div class="block_1">
-
-                <p class="sub_title">Health? ❤️</p>
-                <p class="content">Enjoy home-made tasty food like never before!</p>
-
-                <div class="black_button"><a href="./pages/benefits.php">Give me Tips</a></div>
-            </div>
-
+            <lottie-player class="figma_lottie" src="https://assets10.lottiefiles.com/packages/lf20_IYNhoR.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
         </div>
     </div>
 
@@ -299,6 +289,7 @@
         }
     </script>
 
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script>
         // Import the functions you need from the SDKs you need
