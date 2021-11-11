@@ -234,8 +234,30 @@ a {
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
 
+
 @media (max-width: 800px) {
     .flex-container {
         flex-direction: column;
+        height: 100vh;
     }
+    .flex-item-left .block_1 {
+        vertical-align: middle;
+        padding: 0px 16px 0px 16px;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        position: relative;
+    }
+    .flex-item-right {
+        display: none;
+    }
+    
+    .right_aligned {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
 }

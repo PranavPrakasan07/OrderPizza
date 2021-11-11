@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 
 <html>
 
@@ -15,9 +11,10 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/carousal.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,9 +25,29 @@
 
     <!-- Floating Action Button ends here -->
 
+    <!-- NavBar Close Button -->
+
+    <div class="hamburger" onclick="toggleNavBar(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <center>
+        <div class="topnav" id="topnav">
+            <a href="#Home">Home</a>
+            <a href="#Order">Order</a>
+            <a href="#Specials">Specials</a>
+            <a href="#Benefits">Benefits</a>
+            <a href="#Contact">Contact</a>
+            <a href="./pages/login.php">Login</a>
+        </div>
+    </center>
+
     <!-- Navbar starts here -->
 
-    <div class="navbar" id="navbar">
+    <!-- <div class="navbar" id="navbar">
         <div id="hoverable">
             <a href="#Home"> </a>
             <a href="#Order">Order</a>
@@ -42,7 +59,7 @@
         <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
             <i class="fa fa-bars"></i>
         </a>
-    </div>
+    </div> -->
 
     <!-- Navbar ends here -->
 
@@ -59,8 +76,7 @@
         <div class="flex-item-right">
 
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="figma_lottie" src="https://assets6.lottiefiles.com/packages/lf20_rvfycj0u.json"
-                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+            <lottie-player class="figma_lottie" src="https://assets6.lottiefiles.com/packages/lf20_rvfycj0u.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
     </div>
 
@@ -78,8 +94,7 @@
         <div class="flex-item-right">
 
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="figma_lottie" src="https://assets1.lottiefiles.com/packages/lf20_ngfmgkrn.json"
-                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+            <lottie-player class="figma_lottie" src="https://assets1.lottiefiles.com/packages/lf20_ngfmgkrn.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
     </div>
 
@@ -94,8 +109,8 @@
 
                 <p class="sub_title">Our Specials</p>
                 <p class="content">Try one today!</p>
-
                 <div class="black_button"><a href="./pages/specials.php">Find More</a></div>
+
             </div>
         </div>
 
@@ -198,8 +213,7 @@
         <div class="flex-item-left">
 
             <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-            <lottie-player class="figma_lottie" src="https://assets10.lottiefiles.com/packages/lf20_IYNhoR.json"
-                background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+            <lottie-player class="figma_lottie" src="https://assets10.lottiefiles.com/packages/lf20_IYNhoR.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
         </div>
 
         <div class="flex-item-right">
@@ -288,8 +302,8 @@
 
     <script>
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
-        import { getAnalytics } from "firebase/analytics";
+        // import { initializeApp } from "firebase/app";
+        // import { getAnalytics } from "firebase/analytics";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
