@@ -34,7 +34,7 @@
     <center>
         <div class="topnav" id="topnav">
 
-            <a href="../index.html">Home</a>
+            <a href="../index.php">Home</a>
             <a href="#contact">Contact</a>
 
         </div>

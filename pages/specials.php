@@ -29,24 +29,6 @@
 
     <!-- Floating Action Button ends here -->
 
-    <!-- Navbar starts here -->
-
-    <!-- <div class="navbar" id="navbar">
-        <div id="hoverable">
-            <a href="#Home"> </a>
-            <a href="#Order">Order</a>
-            <a href="#Specials">Specials</a>
-            <a href="#Benefits">Benefits</a>
-            <a href="#Contact">Contact</a>
-            <a href="./pages/login.php">Login</a>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div> -->
-
-    <!-- Navbar ends here -->
-
         <!-- NavBar Close Button -->
         <div class="hamburger" onclick="toggleNavBar(this)">
         <div class="bar1"></div>
@@ -61,8 +43,6 @@
 
             <a href="../index.php">Home</a>
             <a href="#Order">Order</a>
-            <a href="#Specials">Specials</a>
-            <a href="#Benefits">Benefits</a>
             <a href="#Contact">Contact</a>
             <a href="login.php">Login</a>
 

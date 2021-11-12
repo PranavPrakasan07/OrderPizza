@@ -20,5 +20,5 @@
 .flex-container {
   display: flex;
   flex-wrap: nowrap;
-  background-color: DodgerBlue;
+  background-color: white;
 }
