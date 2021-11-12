@@ -12,13 +12,13 @@ function checkUser() {
             var uid = user.uid;
             username = user.email;
 
-            location.href = "../pages/aptitude.html";
+            location.href = "../pages/dashboard.php";
 
             // ...
         } else {
             // User is signed out
             // ...
-            location.href = "../pages/login.html";
+            location.href = "../pages/login.php";
 
         }
     });
@@ -57,7 +57,7 @@ function validateDataLogin() {
                 // ...
                 alert("Hi, " + user.email);
 
-                location.href = '../pages/aptitude.html';
+                location.href = '../pages/dashboard.php';
 
             })
             .catch((error) => {
@@ -89,7 +89,7 @@ function validateDataSignin() {
 
                 alert("Hi, " + user.email);
 
-                location.href = '../pages/dashboard.html';
+                location.href = '../pages/dashboard.php';
 
 
             })
@@ -124,7 +124,8 @@ function validateData(username, password, regno, newAppl) {
 
     else if (!(username.includes("21@vitstudent.ac.in")
         || username.includes("21a@vitstudent.ac.in")
-        || username.includes("21b@vitstudent.ac.in"))) {
+        || username.includes("21b@vitstudent.ac.in")
+        || username.includes("@gmail.com"))) {
         document.getElementById(loginOrSignin + 'username_error').innerHTML = "*Please enter your VIT email";
         isCorrect = false;
     }
@@ -172,7 +173,7 @@ function signOutUser() {
     firebase.auth().signOut().then(() => {
         // Sign-out successful.
         alert("Successfully signed out");
-        location.href = '../index.html';
+        location.href = '../login.php';
     }).catch((error) => {
         // An error happened.
         alert("Sign Out failed");

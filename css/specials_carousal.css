@@ -10,15 +10,10 @@
 
 .carousal-item {
   color: black;
-  background-color: white;
+  background-color: #444;
   padding: 16px;
   width: max-content;
   height: fit-content;
   margin: 32px;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: white;
+  width: 20%;
 }

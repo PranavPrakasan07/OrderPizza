@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Specials</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/specials_carousal.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body>
@@ -29,8 +23,8 @@
 
     <!-- Floating Action Button ends here -->
 
-        <!-- NavBar Close Button -->
-        <div class="hamburger" onclick="toggleNavBar(this)">
+    <!-- NavBar Close Button -->
+    <div class="hamburger" onclick="toggleNavBar(this)">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
@@ -72,7 +66,7 @@
 
     <!-- Carousal starts here -->
 
-    <div class="flex-container">
+    <div class="carousal-container">
         <div class="carousal-item">
             THIS
         </div>
@@ -98,6 +92,7 @@
     <!-- Carousal Script ends here -->
 
     <!-- Navbar toggle script -->
+
     <script>
         function toggleNavBar(t) {
 

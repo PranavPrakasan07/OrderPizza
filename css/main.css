@@ -8,10 +8,9 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     background-color: white;
 }
-
 
 .flex-container {
     display: flex;
@@ -50,7 +49,7 @@ body{
     background-color: rgb(248, 248, 248);
     border-color: #fff;
     border-radius: 32px;
-    margin: 0px 32px 0px 32px;    
+    margin: 0px 32px 0px 32px;
     padding: 0px 32px 0px 32px;
 }
 
@@ -107,13 +106,20 @@ body{
     background-color: black;
     color: white;
     border-radius: 10px;
-    width:max-content;
+    width: max-content;
     cursor: pointer;
     padding: 8px 16px 8px 16px;
     margin: 32px;
 }
 
-a {
+.black_button a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.black_button a:hover {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -122,6 +128,11 @@ a {
 
 .footer {
     background-color: black;
+    color: white;
+}
+
+.footer a {
+    text-decoration: none;
     color: white;
 }
 
@@ -150,7 +161,7 @@ a {
     border: 0px;
     border-radius: 10px;
     font-size: 18px;
-    margin:32px;
+    margin: 32px;
 }
 
 .small_text {
@@ -160,7 +171,7 @@ a {
     margin: 0px 16px 0px 16px;
 }
 
-#floating_button{
+#floating_button {
     position: fixed;
     margin: 32px;
     bottom: 0;
@@ -184,7 +195,7 @@ a {
     margin: 0px 16px 0px 16px;
 }
 
-a:hover{
+.black_button a:hover {
     color: #1f1f1f;
 }
 
@@ -205,7 +216,6 @@ html ::-webkit-scrollbar-thumb {
     border-width: 4px;
 }
 
-
 input {
     padding: 4px 16px 4px 16px;
     border: #1F1F1F;
@@ -216,9 +226,7 @@ input {
     background-color: #C0C0C0;
 }
 
-
 /* Responsive layout - makes a one column-layout instead of two-column layout */
-
 
 @media (max-width: 800px) {
     .flex-container {
@@ -236,7 +244,6 @@ input {
     .flex-item-right {
         display: none;
     }
-    
     .right_aligned {
         position: absolute;
         top: 40%;
