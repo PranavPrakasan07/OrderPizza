@@ -188,6 +188,35 @@ a:hover{
     color: #1f1f1f;
 }
 
+html ::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+    margin: 4px;
+    border: #fff;
+    border-width: 4px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background-color: #383838;
+    width: 10px;
+    margin: 4px;
+    border-radius: 25px;
+    border: #fff;
+    border-width: 4px;
+}
+
+
+input {
+    padding: 4px 16px 4px 16px;
+    border: #1F1F1F;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 12px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #C0C0C0;
+}
+
+
 /* Responsive layout - makes a one column-layout instead of two-column layout */
 
 

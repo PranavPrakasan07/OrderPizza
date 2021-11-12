@@ -23,7 +23,7 @@
 
 .tagline_active {
     font-size: 40px;
-    color: #1f1f1f;
+    color: white;
     cursor: pointer;
     padding: 0px 16px 0px 16px;
     margin: 0px 16px 0px 16px;
@@ -48,9 +48,15 @@
 
 label{
     font-size: 16px;
-    color: #1f1f1f;
+    color: #444444;
     cursor: pointer;
     text-align: left;
     padding: 0px 4px 0px 4px;
     margin: 0px 8px 0px 4px;
+}
+
+.card{
+    background-color: #1f1f1f;
+    border-radius: 25px;
+    padding: 36px;
 }

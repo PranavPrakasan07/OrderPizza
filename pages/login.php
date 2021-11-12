@@ -39,18 +39,6 @@
 
         </div>
     </center>
-<!-- 
-    <div class="container">
-        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_FYx0Ph.json" background="transparent"
-            speed="1" style="width: 500px; height: 500px;" loop autoplay preserveAspectRatio="xMinYMin meet">
-        </lottie-player>
-
-        <div class="right_aligned">
-            <div class="title_header">Welcome</div>
-            <div class="content">Glad you are here!</div>
-        </div>
-    </div> -->
-
 
     <div class="flex-container">
         <div class="flex-item-left">
@@ -82,7 +70,7 @@
                     <table id="login_table">
                         <tr>
                             <td><label for="l_username">Username</label></td>
-                            <td> <input id="l_username" type="email" placeholder="me2021@vitstudent.ac.in"><br></td>
+                            <td> <input id="l_username" type="email" placeholder="me2021@gmail.com"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -101,8 +89,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="l_rno">Reg. Number</label></td>
-                            <td> <input id="l_rno" type="text" placeholder="e.g. 21BCI0007"><br></td>
+                            <td><label for="l_rno">Mobile Number</label></td>
+                            <td> <input id="l_rno" type="text" placeholder="+91 9191919191"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -121,7 +109,7 @@
                     <table id="signin_table" style="display: none;">
                         <tr>
                             <td><label for="s_username">Username</label></td>
-                            <td> <input id="s_username" type="email" placeholder="me2021@vitstudent.ac.in"><br></td>
+                            <td> <input id="s_username" type="email" placeholder="me2021@gmail.com"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -140,8 +128,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label for="s_rno">Reg. Number</label></td>
-                            <td> <input id="s_rno" type="text" placeholder="e.g. 21BCI0007"><br></td>
+                            <td><label for="s_rno">Mobile Number</label></td>
+                            <td> <input id="s_rno" type="text" placeholder="+91 9191919191"><br></td>
                         </tr>
                         <tr>
                             <td></td>
