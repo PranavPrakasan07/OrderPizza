@@ -1,103 +1,278 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login</title>
+    <title>Welcome</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/form.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
 </head>
 
 <body>
 
+    <!-- Up Button -->
+    <a id="floating_button" href="#"><img src="../images/icons/up_arrow.svg"></a>
+
+    <!-- NavBar Toggle Button -->
+    <div class="hamburger" onclick="toggleNavBar(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <!-- Navbar -->
     <center>
-        <p class="title_header">Holla User!</p>
+        <div class="topnav" id="topnav">
 
-        <div class="tab_buttons">
-            <div class="tablink" onclick="openPage('Login', this)">Login</div>
-            <div class="tablink" onclick="openPage('Signup', this)" id="defaultOpen">Signup</div>
-        </div>
-
-        <div id="Login" class="tabcontent">
-            <label for="email_l">Email</label><br>
-            <input class="form_input" type="email" name="email" id="email_l" placeholder="user@gmail.com"><br><br>
-
-            <label for="password_l">Password</label><br>
-            <input class="form_input" type="password" name="password" id="password_l" placeholder="Password"><br><br>
-
-            <div class="black_button" onclick="signin()">Login</div>
+            <a href="../index.html">Home</a>
+            <a href="#contact">Contact</a>
 
         </div>
-
-        <div id="Signup" class="tabcontent">
-            <label for="email_s">Email</label><br>
-            <input class="form_input" type="email" name="email" id="email_s" placeholder="user@gmail.com"><br><br>
-
-            <label for="password_s">Password</label><br>
-            <input class="form_input" type="password" name="password" id="password_s" placeholder="Password"><br><br>
-
-            <div class="black_button" onclick="signup()">Signup</div>
-
-        </div>
-
-
     </center>
+<!-- 
+    <div class="container">
+        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_FYx0Ph.json" background="transparent"
+            speed="1" style="width: 500px; height: 500px;" loop autoplay preserveAspectRatio="xMinYMin meet">
+        </lottie-player>
 
+        <div class="right_aligned">
+            <div class="title_header">Welcome</div>
+            <div class="content">Glad you are here!</div>
+        </div>
+    </div> -->
+
+
+    <div class="flex-container">
+        <div class="flex-item-left">
+
+            <!-- Login/Signin Card -->
+            <div class="card">
+
+                <div class="form-container">
+
+                    <!-- Login Toggle -->
+                    <div class="flex-form-left">
+                        <div id="login_header" class="tagline_active" style="padding-left: 0px; margin-left: 0;"
+                            onclick="enableLogin(this)">Login</div>
+                    </div>
+
+                    <!-- Signin Toggle -->
+                    <div class="flex-form-right">
+                        <div id="signin_header" class="tagline_inactive" style="padding-left: 0px; margin-left: 0;"
+                            onclick="enableSignin(this)">Signin</div>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <form method="post" action="#">
+
+                    <!-- Login Form -->
+                    <table id="login_table">
+                        <tr>
+                            <td><label for="l_username">Username</label></td>
+                            <td> <input id="l_username" type="email" placeholder="me2021@vitstudent.ac.in"><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p id="l_username_error" class="error_message">&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="l_password">Password</label></td>
+                            <td> <input id="l_password" type="password" placeholder="Password"><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p id="l_password_error" class="error_message">&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="l_rno">Reg. Number</label></td>
+                            <td> <input id="l_rno" type="text" placeholder="e.g. 21BCI0007"><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p id="l_rno_error" class="error_message">&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> <input id="login_button" class="button_style" class="button_style"
+                                    type="button" value="Login" style="background-color: white;"
+                                    onclick="validateDataLogin()"><br></td>
+                        </tr>
+                    </table>
+
+                    <!-- Signin Form -->
+                    <table id="signin_table" style="display: none;">
+                        <tr>
+                            <td><label for="s_username">Username</label></td>
+                            <td> <input id="s_username" type="email" placeholder="me2021@vitstudent.ac.in"><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p id="s_username_error" class="error_message">&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="s_password">Password</label></td>
+                            <td> <input id="s_password" type="password" placeholder="Password"><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p id="s_password_error" class="error_message">&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="s_rno">Reg. Number</label></td>
+                            <td> <input id="s_rno" type="text" placeholder="e.g. 21BCI0007"><br></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <p id="s_rno_error" class="error_message">&nbsp;</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> <input id="signin_button" class="button_style" class="button_style"
+                                    type="button" value="Sign in" style="background-color: white;"
+                                    onclick="validateDataSignin()"><br></td>
+                        </tr>
+                    </table>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Lottie -->
+        <div class="flex-item-right">
+            <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_ifegals2.json"
+                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Footer begins here -->
+    <div class="footer">
+        <div class="flex-container" id="contact">
+
+            <div class="flex-item-left">
+                <div class="block"><br>
+                    <p class="content">Contact Us</p>
+
+                    <div class="icons_block">
+
+                        <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px"
+                                height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/github.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px"
+                                height="32px"></a>
+
+                    </div>
+
+                    <div class="icons_block">
+
+                        <a class="icons" href="#"><img src="../images/icons/google.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px"
+                                height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/youtube.svg" width="32px" height="32px"></a>
+
+                    </div>
+
+
+                    <p class="content">Subscribe</p>
+                    <br>
+
+                    <div class="subscribe">
+                        <input type="email" name="email" placeholder="me@gmail.com">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="flex-item-right">
+                <div class="block_1">
+
+                    <p class="sub_title">Need Help?</p>
+                    <p class="content">Mail us your thoughts!</p>
+
+                    <br>
+                    <hr>
+                    <br>
+
+                    <center>
+                        <p class="small_text"><a href="../pages/credits.html">Credits</a></p>
+                    </center>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer end here -->
+
+    <!-- Toggle Navbar Script starts here -->
     <script>
-        function openPage(pageName, elmnt, color = "orange") {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        function toggleNavBar(t) {
+
+            toggle(t)
+
+            var x = document.getElementById("topnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
             }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-            document.getElementById(pageName).style.display = "block";
-            elmnt.style.backgroundColor = color;
         }
 
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
+        function toggle(x) {
+            x.classList.toggle("change");
+        }
     </script>
+    <!-- Toggle Navbar Script ends here -->
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
+    <!-- Toggle Login/Signin Script starts here -->
+    <script>
+        function enableSignin(x) {
+            document.getElementById('login_table').style.display = 'none';
+            document.getElementById('signin_table').style.display = 'block';
 
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+            document.getElementById('signin_header').className = 'tagline_active'
+            document.getElementById('login_header').className = 'tagline_inactive'
 
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyB9E3uFoTlipw5i6Kx0P8dQLYyMhVtgUPs",
-            authDomain: "orderpizza-a21be.firebaseapp.com",
-            projectId: "orderpizza-a21be",
-            storageBucket: "orderpizza-a21be.appspot.com",
-            messagingSenderId: "950362202077",
-            appId: "1:950362202077:web:4118e6014f4f579fa2a034",
-            measurementId: "G-RQM88V4N7F"
-        };
+        }
 
-        firebase.initializeApp(firebaseConfig);
+        function enableLogin(x) {
+            document.getElementById('signin_table').style.display = 'none';
+            document.getElementById('login_table').style.display = 'block';
+
+            document.getElementById('login_header').className = 'tagline_active'
+            document.getElementById('signin_header').className = 'tagline_inactive'
+        }
     </script>
-
-    <script src="../js/auth.js"></script>
+    <!-- Toggle Login/Signin Script ends here -->
 
 </body>
 

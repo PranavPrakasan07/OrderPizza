@@ -1,0 +1,56 @@
+.form-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-form-left {
+    flex: 50%;
+    vertical-align: middle;
+    padding: 0px 16px 0px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-form-right {
+    flex: 50%;
+    vertical-align: middle;
+    padding: 0px 16px 0px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagline_active {
+    font-size: 40px;
+    color: #1f1f1f;
+    cursor: pointer;
+    padding: 0px 16px 0px 16px;
+    margin: 0px 16px 0px 16px;
+}
+
+.tagline_inactive {
+    font-size: 36px;
+    color: #444444;
+    cursor: pointer;
+    padding: 0px 16px 0px 16px;
+    margin: 0px 16px 0px 16px;
+}
+
+.error_message {
+    font-size: 14px;
+    color: #FF7043;
+    cursor: pointer;
+    text-align: left;
+    padding: 0px 4px 0px 4px;
+    margin: 0px 8px 0px 4px;
+}
+
+label{
+    font-size: 16px;
+    color: #1f1f1f;
+    cursor: pointer;
+    text-align: left;
+    padding: 0px 4px 0px 4px;
+    margin: 0px 8px 0px 4px;
+}

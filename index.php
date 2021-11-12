@@ -8,7 +8,7 @@
     <title>Welcome</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/carousal.css">
     <link rel="stylesheet" href="./css/navbar.css">
@@ -302,7 +302,7 @@
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    <script>
+    <!-- <script>
         // Import the functions you need from the SDKs you need
         // import { initializeApp } from "firebase/app";
         // import { getAnalytics } from "firebase/analytics";
@@ -324,7 +324,7 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-    </script>
+    </script> -->
 
 </body>
 
