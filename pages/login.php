@@ -23,6 +23,8 @@
 
 <?php
 
+session_start();
+
 $l_username = $l_password = $l_mno = $s_username = $s_password = $s_mno = "";
 $l_error_username = $l_error_password = $l_error_mno = "&nbsp;";
 $s_error_username = $s_error_password = $s_error_mno = "&nbsp;";
@@ -43,11 +45,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $s_error_mno = validateData($s_mno);
 
     if (($l_username != "" && $l_password != "" && $l_mno != "")) {
+        $_SESSION['username'] = $l_username;
+        $_SESSION['password'] = $l_password;
+        $_SESSION['mobile'] = $l_mno;
+
         header("Location: ../pages/dashboard.php");
         exit;
+        
     } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
+
+        $_SESSION['username'] = $s_username;
+        $_SESSION['password'] = $s_password;
+        $_SESSION['mobile'] = $s_mno;
+
         header("Location: ../pages/dashboard.php");
         exit;
+
     } else {
         echo "Error";
     }

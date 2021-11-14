@@ -14,8 +14,11 @@
 
 </head>
 
+<?php session_start();?>
+
 <body>
 
+<?php echo $_SESSION['username'];?>
 
 </body>
 
