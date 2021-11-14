@@ -20,6 +20,63 @@
 
 </head>
 
+
+<?php
+
+$l_username = $l_password = $l_mno = $s_username = $s_password = $s_mno = "";
+$l_error_username = $l_error_password = $l_error_mno = "&nbsp;";
+$s_error_username = $s_error_password = $s_error_mno = "&nbsp;";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $l_username = test_input($_POST["l_username"]);
+    $l_password =  test_input($_POST["l_password"]);
+    $l_mno =  test_input($_POST["l_rno"]);
+    $s_username =  test_input($_POST["s_password"]);
+    $s_password =  test_input($_POST["s_username"]);
+    $s_mno =  test_input($_POST["s_rno"]);
+
+    $l_error_username = validateData($l_username);
+    $l_error_password = validateData($l_password);
+    $l_error_mno = validateData($l_mno);
+    $s_error_username = validateData($s_username);
+    $s_error_password = validateData($s_password);
+    $s_error_mno = validateData($s_mno);
+
+    if (($l_username != "" && $l_password != "" && $l_mno != "")) {
+        header("Location: ../pages/dashboard.php");
+        exit;
+    } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
+        header("Location: ../pages/dashboard.php");
+        exit;
+    } else {
+        echo "Error";
+    }
+}
+
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+function validateData($data)
+{
+
+    $error = "";
+
+    if (empty($data)) {
+        $error = "Please fill this field";
+    } else {
+        $error = "";
+    }
+
+    return $error;
+}
+
+?>
+
 <body>
 
     <!-- Up Button -->
@@ -46,27 +103,26 @@
         <div class="flex-item-left">
 
             <!-- Login/Signin Card -->
+
             <div class="card">
 
                 <div class="form-container">
 
                     <!-- Login Toggle -->
                     <div class="flex-form-left">
-                        <div id="login_header" class="tagline_active" style="padding-left: 0px; margin-left: 0;"
-                            onclick="enableLogin(this)">Login</div>
+                        <div id="login_header" class="tagline_active" style="padding-left: 0px; margin-left: 0;" onclick="enableLogin(this)">Login</div>
                     </div>
 
                     <!-- Signin Toggle -->
                     <div class="flex-form-right">
-                        <div id="signin_header" class="tagline_inactive" style="padding-left: 0px; margin-left: 0;"
-                            onclick="enableSignin(this)">Signin</div>
+                        <div id="signin_header" class="tagline_inactive" style="padding-left: 0px; margin-left: 0;" onclick="enableSignin(this)">Signin</div>
                     </div>
 
                 </div>
 
                 <br>
 
-                <form method="post" action="../php/userAuth.php">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
                     <!-- Login Form -->
                     <table id="login_table">
@@ -77,7 +133,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="l_username_error" name="l_username_error" class="error_message">&nbsp;</p>
+                                <p id="l_username_error" name="l_username_error" class="error_message"><?php echo $l_error_username; ?></p>
                             </td>
                         </tr>
                         <tr>
@@ -87,7 +143,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="l_password_error" name="l_password_error" class="error_message">&nbsp;</p>
+                                <p id="l_password_error" name="l_password_error" class="error_message"><?php echo $l_error_password; ?></p>
                             </td>
                         </tr>
                         <tr>
@@ -97,13 +153,11 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="l_rno_error" name="l_rno_error" class="error_message">&nbsp;</p>
+                                <p id="l_rno_error" name="l_rno_error" class="error_message"><?php echo $l_error_mno; ?></p>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <input id="login_button" name="login_button" class="button_style" class="button_style"
-                                    type="submit" value="Login" style="background-color: white;"
-                                    ><br></td>
+                            <td colspan="2"> <input id="login_button" name="login_button" class="button_style" class="button_style" type="submit" value="Login" style="background-color: white;"><br></td>
                         </tr>
                     </table>
 
@@ -116,7 +170,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="s_username_error" name="s_username_error" class="error_message">&nbsp;</p>
+                                <p id="s_username_error" name="s_username_error" class="error_message"><?php echo $s_error_username; ?></p>
                             </td>
                         </tr>
                         <tr>
@@ -126,7 +180,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="s_password_error" name="s_password_error" class="error_message">&nbsp;</p>
+                                <p id="s_password_error" name="s_password_error" class="error_message"><?php echo $s_error_password; ?></p>
                             </td>
                         </tr>
                         <tr>
@@ -136,24 +190,22 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="s_rno_error" name="s_rno_error" class="error_message">&nbsp;</p>
+                                <p id="s_rno_error" name="s_rno_error" class="error_message"><?php echo $s_error_mno; ?></p>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <input id="signin_button" class="button_style" class="button_style"
-                                    type="submit" value="Sign in" style="background-color: white;"
-                                    ><br></td>
+                            <td colspan="2"> <input id="signin_button" class="button_style" class="button_style" type="submit" value="Sign in" style="background-color: white;"><br></td>
                         </tr>
                     </table>
 
                 </form>
             </div>
+
         </div>
 
         <!-- Lottie -->
         <div class="flex-item-right">
-            <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_ifegals2.json"
-                background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+            <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_ifegals2.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></lottie-player>
         </div>
 
     </div>
@@ -173,19 +225,16 @@
 
                     <div class="icons_block">
 
-                        <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px"
-                                height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px" height="32px"></a>
                         <a class="icons" href="#"><img src="../images/icons/github.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px"
-                                height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px" height="32px"></a>
 
                     </div>
 
                     <div class="icons_block">
 
                         <a class="icons" href="#"><img src="../images/icons/google.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px"
-                                height="32px"></a>
+                        <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px" height="32px"></a>
                         <a class="icons" href="#"><img src="../images/icons/youtube.svg" width="32px" height="32px"></a>
 
                     </div>
