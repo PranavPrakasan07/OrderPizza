@@ -27,7 +27,6 @@ $name = substr($username, 0, strpos($username, "@"));
 
     <?php echo $_SESSION['username']; ?>
 
-
     <!-- Up Button -->
     <a id="floating_button" href="#"><img src="../images/icons/up_arrow.svg"></a>
 

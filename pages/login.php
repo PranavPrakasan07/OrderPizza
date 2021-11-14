@@ -20,6 +20,16 @@
 
 </head>
 
+<?php
+$servername = "localhost";
+$username = "pranav";
+$password = "abc.1234";
+$dbname = "order_pizza";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+?>
 
 <?php
 
@@ -28,6 +38,8 @@ session_start();
 $l_username = $l_password = $l_mno = $s_username = $s_password = $s_mno = "";
 $l_error_username = $l_error_password = $l_error_mno = "&nbsp;";
 $s_error_username = $s_error_password = $s_error_mno = "&nbsp;";
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $l_username = test_input($_POST["l_username"]);
@@ -51,16 +63,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         header("Location: ../pages/dashboard.php");
         exit;
-        
     } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
 
         $_SESSION['username'] = $s_username;
         $_SESSION['password'] = $s_password;
         $_SESSION['mobile'] = $s_mno;
 
-        header("Location: ../pages/dashboard.php");
-        exit;
+        // Check connection
+        if (!$conn) {
+            echo "Connection failed: " . mysqli_connect_error();
+        } else {
+            echo "Connected successfully";
 
+            $sql = "INSERT INTO users VALUES ('$s_username', '$s_password', '$s_mno')";
+            // $sql = "SELECT * FROM users;";
+
+            // $result = mysqli_query($conn, $sql);
+
+            if(mysqli_query($conn, $sql)){
+                echo "Success";
+            }else{
+                echo "Query error : " . mysqli_error($conn);
+            }
+
+            // $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            // print_r($users);
+
+            // header("Location: ../pages/dashboard.php");
+            // exit;
+        }
     } else {
         echo "Error";
     }

@@ -1,13 +1,17 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
+$username = "pranav";
+$password = "abc.1234";
+$dbname = "order_pizza";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+  echo "Connection failed: " . mysqli_connect_error();
+}else{
+  echo "Connected successfully";
 }
-echo "Connected successfully";
+
+?>
