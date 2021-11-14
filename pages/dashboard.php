@@ -46,18 +46,6 @@ $name = substr($username, 0, strpos($username, "@"));
 
 <?php
 
-function logout()
-{
-    // remove all session variables
-    session_unset();
-
-    // destroy the session
-    // session_destroy();
-
-    header("Location: ../pages/login.php");
-    exit;
-}
-
 $username = $_SESSION['username'];
 
 $name = substr($username, 0, strpos($username, "@"));
@@ -84,8 +72,8 @@ $name = substr($username, 0, strpos($username, "@"));
 
             <a href="../index.php">Home</a>
             <a href="#contact">Contact</a>
-            <a href="#"><?php echo 'Logout'; ?></a>
             <a href="#"><?php echo "Hi " . $name . "!" ?></a>
+            <a href="../pages/logout.php">Logout</a>
 
         </div>
     </center>
@@ -199,7 +187,6 @@ $name = substr($username, 0, strpos($username, "@"));
         }
     </script>
     <!-- Toggle Navbar Script ends here -->
-
 
 </body>
 

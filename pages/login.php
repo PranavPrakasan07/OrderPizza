@@ -79,8 +79,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['mobile'] = $l_mno;
         $_SESSION['loggedin'] = true;
 
-        header("Location: ../pages/dashboard.php");
-        exit;
+        $sql = "";
+        // Check connection
+        if (!$conn) {
+            echo "Connection failed: " . mysqli_connect_error();
+        } else {
+            echo "Connected successfully done!" . "<br>";
+
+            $sql = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password';";
+
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "Success" . "<br>";
+                }
+                header("Location: ../pages/dashboard.php");
+                exit;
+            } else {
+                echo "0 results";
+            }
+
+            mysqli_free_result($result);
+
+            mysqli_close($conn);
+
+        }
     } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
         echo "Signup";
 
