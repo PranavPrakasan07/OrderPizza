@@ -66,13 +66,13 @@
 
                 <br>
 
-                <form method="post" action="#">
+                <form method="post" action="../php/userAuth.php">
 
                     <!-- Login Form -->
                     <table id="login_table">
                         <tr>
                             <td><label for="l_username">Username</label></td>
-                            <td> <input id="l_username" type="email" placeholder="me2021@gmail.com"><br></td>
+                            <td> <input id="l_username" name="l_username" type="email" placeholder="me@gmail.com"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -82,7 +82,7 @@
                         </tr>
                         <tr>
                             <td><label for="l_password">Password</label></td>
-                            <td> <input id="l_password" type="password" placeholder="Password"><br></td>
+                            <td> <input id="l_password" name="l_password" type="password" placeholder="Password"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -92,7 +92,7 @@
                         </tr>
                         <tr>
                             <td><label for="l_rno">Mobile Number</label></td>
-                            <td> <input id="l_rno" type="text" placeholder="+91 9191919191"><br></td>
+                            <td> <input id="l_rno" name="l_rno" type="text" placeholder="+91 9191919191"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -101,9 +101,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"> <input id="login_button" class="button_style" class="button_style"
-                                    type="button" value="Login" style="background-color: white;"
-                                    onclick="validateDataLogin()"><br></td>
+                            <td colspan="2"> <input id="login_button" name="login_button" class="button_style" class="button_style"
+                                    type="submit" value="Login" style="background-color: white;"
+                                    ><br></td>
                         </tr>
                     </table>
 
@@ -111,7 +111,7 @@
                     <table id="signin_table" style="display: none;">
                         <tr>
                             <td><label for="s_username">Username</label></td>
-                            <td> <input id="s_username" type="email" placeholder="me2021@gmail.com"><br></td>
+                            <td> <input id="s_username" name="s_username" type="email" placeholder="me@gmail.com"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -121,7 +121,7 @@
                         </tr>
                         <tr>
                             <td><label for="s_password">Password</label></td>
-                            <td> <input id="s_password" type="password" placeholder="Password"><br></td>
+                            <td> <input id="s_password" name="s_password" type="password" placeholder="Password"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -131,7 +131,7 @@
                         </tr>
                         <tr>
                             <td><label for="s_rno">Mobile Number</label></td>
-                            <td> <input id="s_rno" type="text" placeholder="+91 9191919191"><br></td>
+                            <td> <input id="s_rno" name="s_rno" type="text" placeholder="+91 9191919191"><br></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -141,8 +141,8 @@
                         </tr>
                         <tr>
                             <td colspan="2"> <input id="signin_button" class="button_style" class="button_style"
-                                    type="button" value="Sign in" style="background-color: white;"
-                                    onclick="validateDataSignin()"><br></td>
+                                    type="submit" value="Sign in" style="background-color: white;"
+                                    ><br></td>
                         </tr>
                     </table>
 
