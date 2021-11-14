@@ -21,8 +21,26 @@
 </head>
 
 <?php
+$servername = "localhost";
+$username = "pranav";
+$password = "abc.1234";
+$dbname = "order_pizza";
 
-include('../config/db-connect.php');
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    echo "Connection failed: " . mysqli_connect_error();
+} else {
+    echo "Connected successfully with DB";
+}
+
+?>
+
+
+<?php
+
 
 session_start();
 
@@ -44,6 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $s_password =  test_input($_POST["s_password"]);
     $s_mno =  test_input($_POST["s_rno"]);
 
+    $salt = 'UsernameSalt012';
+
     $l_error_username = validateData($l_username);
     $l_error_password = validateData($l_password);
     $l_error_mno = validateData($l_mno);
@@ -52,18 +72,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $s_error_mno = validateData($s_mno);
 
     if (($l_username != "" && $l_password != "" && $l_mno != "")) {
+        echo "Login";
+
         $_SESSION['username'] = $l_username;
-        $_SESSION['password'] = $l_password;
+        $_SESSION['password'] = sha1($l_password . $salt);
         $_SESSION['mobile'] = $l_mno;
         $_SESSION['loggedin'] = true;
 
         header("Location: ../pages/dashboard.php");
         exit;
-
     } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
+        echo "Signup";
 
         $_SESSION['username'] = $s_username;
-        $_SESSION['password'] = $s_password;
+        $_SESSION['password'] = sha1($s_password . $salt);
         $_SESSION['mobile'] = $s_mno;
         $_SESSION['loggedin'] = true;
 
@@ -71,25 +93,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$conn) {
             echo "Connection failed: " . mysqli_connect_error();
         } else {
-            echo "Connected successfully";
+            echo "Connected successfully done";
 
-            $sql = "INSERT INTO ('Username', 'Password', 'Contact') users VALUES ('$s_username', '$s_password', '$s_mno')";
-            // $sql = "SELECT * FROM users;";
+            $sql = "INSERT INTO users(Username, Password, Contact)  VALUES ('$s_username', '$s_password', '$s_mno')";
 
-            // $result = mysqli_query($conn, $sql);
-
-            if(mysqli_query($conn, $sql)){
+            if (mysqli_query($conn, $sql)) {
                 echo "Success";
-            }else{
+                header("Location: ../pages/dashboard.php");
+                exit;
+            } else {
                 echo "Query error : " . mysqli_error($conn);
             }
-
-            // $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-            // print_r($users);
-
-            header("Location: ../pages/dashboard.php");
-            exit;
         }
     } else {
         echo "Error";

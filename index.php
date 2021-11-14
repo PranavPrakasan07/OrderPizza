@@ -26,7 +26,8 @@ session_start();
 $loggedin = "";
 
 if (isset($_SESSION['loggedin'])) {
-    $loggedin = $_SESSION['username'];
+    $username = $_SESSION['username'];
+    $loggedin = "Hi " . substr($username, 0, strpos($username, "@")) . "!";
 } else {
     $loggedin = "Login";
 }

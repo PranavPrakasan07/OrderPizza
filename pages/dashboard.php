@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Order</title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/main.css">
@@ -15,9 +15,48 @@
 
 </head>
 
-<?php 
+<?php
+$servername = "localhost";
+$username = "pranav";
+$password = "abc.1234";
+$dbname = "order_pizza";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    echo "Connection failed: " . mysqli_connect_error();
+} else {
+    echo "Connected successfully with DB";
+}
+
+?>
+
+
+<?php
 
 session_start();
+
+$username = $_SESSION['username'];
+
+$name = substr($username, 0, strpos($username, "@"));
+
+?>
+
+<?php
+
+function logout()
+{
+    // remove all session variables
+    session_unset();
+
+    // destroy the session
+    // session_destroy();
+
+    header("Location: ../pages/login.php");
+    exit;
+}
 
 $username = $_SESSION['username'];
 
@@ -45,6 +84,7 @@ $name = substr($username, 0, strpos($username, "@"));
 
             <a href="../index.php">Home</a>
             <a href="#contact">Contact</a>
+            <a href="#"><?php echo 'Logout'; ?></a>
             <a href="#"><?php echo "Hi " . $name . "!" ?></a>
 
         </div>
@@ -53,9 +93,32 @@ $name = substr($username, 0, strpos($username, "@"));
 
     <div class="flex-container">
 
-        <div>
+        <?php
+        $sql = "";
+        // Check connection
+        if (!$conn) {
+            echo "Connection failed: " . mysqli_connect_error();
+        } else {
+            echo "Connected successfully done!" . "<br>";
 
-        </div>
+            $sql = 'SELECT * FROM items';
+
+            $result = mysqli_query($conn, $sql);
+
+            $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+            mysqli_free_result($result);
+
+            mysqli_close($conn);
+
+            print_r($items);
+
+
+            // header("Location: ../pages/dashboard.php");
+            // exit;
+        }
+
+        ?>
 
     </div>
 
