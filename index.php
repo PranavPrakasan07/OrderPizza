@@ -19,6 +19,20 @@
 
 </head>
 
+<?php
+
+session_start();
+
+$loggedin = "";
+
+if (isset($_SESSION['loggedin'])) {
+    $loggedin = $_SESSION['username'];
+} else {
+    $loggedin = "Login";
+}
+
+?>
+
 <body>
 
     <!-- Floating Action Button starts here -->
@@ -43,7 +57,7 @@
             <a href="#Specials">Specials</a>
             <a href="#Benefits">Benefits</a>
             <a href="#Contact">Contact</a>
-            <a href="./pages/login.php">Login</a>
+            <a href="./pages/login.php"><?php echo $loggedin ?></a>
         </div>
     </center>
 

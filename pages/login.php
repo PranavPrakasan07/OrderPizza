@@ -21,19 +21,14 @@
 </head>
 
 <?php
-$servername = "localhost";
-$username = "pranav";
-$password = "abc.1234";
-$dbname = "order_pizza";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-?>
-
-<?php
+include('../config/db-connect.php');
 
 session_start();
+
+if (isset($_SESSION['loggedin'])) {
+    header("Location: ../pages/dashboard.php");
+}
 
 $l_username = $l_password = $l_mno = $s_username = $s_password = $s_mno = "";
 $l_error_username = $l_error_password = $l_error_mno = "&nbsp;";
@@ -45,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $l_username = test_input($_POST["l_username"]);
     $l_password =  test_input($_POST["l_password"]);
     $l_mno =  test_input($_POST["l_rno"]);
-    $s_username =  test_input($_POST["s_password"]);
-    $s_password =  test_input($_POST["s_username"]);
+    $s_username =  test_input($_POST["s_username"]);
+    $s_password =  test_input($_POST["s_password"]);
     $s_mno =  test_input($_POST["s_rno"]);
 
     $l_error_username = validateData($l_username);
@@ -60,14 +55,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['username'] = $l_username;
         $_SESSION['password'] = $l_password;
         $_SESSION['mobile'] = $l_mno;
+        $_SESSION['loggedin'] = true;
 
         header("Location: ../pages/dashboard.php");
         exit;
+
     } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
 
         $_SESSION['username'] = $s_username;
         $_SESSION['password'] = $s_password;
         $_SESSION['mobile'] = $s_mno;
+        $_SESSION['loggedin'] = true;
 
         // Check connection
         if (!$conn) {
@@ -75,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Connected successfully";
 
-            $sql = "INSERT INTO users VALUES ('$s_username', '$s_password', '$s_mno')";
+            $sql = "INSERT INTO ('Username', 'Password', 'Contact') users VALUES ('$s_username', '$s_password', '$s_mno')";
             // $sql = "SELECT * FROM users;";
 
             // $result = mysqli_query($conn, $sql);
@@ -90,8 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // print_r($users);
 
-            // header("Location: ../pages/dashboard.php");
-            // exit;
+            header("Location: ../pages/dashboard.php");
+            exit;
         }
     } else {
         echo "Error";
