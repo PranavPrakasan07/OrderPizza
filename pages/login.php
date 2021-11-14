@@ -77,7 +77,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="l_username_error" class="error_message">&nbsp;</p>
+                                <p id="l_username_error" name="l_username_error" class="error_message">&nbsp;</p>
                             </td>
                         </tr>
                         <tr>
@@ -87,7 +87,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="l_password_error" class="error_message">&nbsp;</p>
+                                <p id="l_password_error" name="l_password_error" class="error_message">&nbsp;</p>
                             </td>
                         </tr>
                         <tr>
@@ -97,7 +97,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="l_rno_error" class="error_message">&nbsp;</p>
+                                <p id="l_rno_error" name="l_rno_error" class="error_message">&nbsp;</p>
                             </td>
                         </tr>
                         <tr>
@@ -116,7 +116,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="s_username_error" class="error_message">&nbsp;</p>
+                                <p id="s_username_error" name="s_username_error" class="error_message">&nbsp;</p>
                             </td>
                         </tr>
                         <tr>
@@ -126,7 +126,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="s_password_error" class="error_message">&nbsp;</p>
+                                <p id="s_password_error" name="s_password_error" class="error_message">&nbsp;</p>
                             </td>
                         </tr>
                         <tr>
@@ -136,7 +136,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <p id="s_rno_error" class="error_message">&nbsp;</p>
+                                <p id="s_rno_error" name="s_rno_error" class="error_message">&nbsp;</p>
                             </td>
                         </tr>
                         <tr>
