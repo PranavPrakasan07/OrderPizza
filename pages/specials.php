@@ -15,6 +15,23 @@
 
 </head>
 
+<?php
+
+include('../config/db-connect.php');
+
+session_start();
+
+$loggedin = "";
+
+if (isset($_SESSION['loggedin'])) {
+    $username = $_SESSION['username'];
+    $loggedin = "Hi " . substr($username, 0, strpos($username, "@")) . "!";
+} else {
+    $loggedin = "Login";
+}
+
+?>
+
 <body>
 
     <!-- Floating Action Button starts here -->
@@ -38,7 +55,7 @@
             <a href="../index.php">Home</a>
             <a href="#Order">Order</a>
             <a href="#Contact">Contact</a>
-            <a href="login.php">Login</a>
+            <a href="login.php"><?php echo $loggedin ?></a>
 
         </div>
     </center>
@@ -64,24 +81,47 @@
         </div>
     </div>
 
+    <p class="content">Recommended</p>
+
     <!-- Carousal starts here -->
 
     <div class="carousal-container">
-        <div class="carousal-item">
-            THIS
-        </div>
-        <div class="carousal-item">
-            THIS
-        </div>
-        <div class="carousal-item">
-            THIS
-        </div>
-        <div class="carousal-item">
-            THIS
-        </div>
-        <div class="carousal-item">
-            THIS
-        </div>
+
+        <?php
+        // for ($x = 0; $x <= 10; $x++) {
+
+        $sql = "";
+        // Check connection
+        if (!$conn) {
+            echo "Connection failed: " . mysqli_connect_error();
+        } else {
+
+            $sql = 'SELECT `item_name`, `price`, `discount`, `ingredients` FROM items';
+
+            $result = mysqli_query($conn, $sql);
+
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+
+        ?>
+                    <div class="carousal-item">
+                        
+                        <p id="itemname" class="item_text"><?php echo $row["item_name"] ?></p><br>
+                        <p id="price" class="item_text"><?php echo "₹" . $row["price"] ?></p>
+                        <p id="ingredients" class="item_text"><?php echo $row["ingredients"] ?></p>
+                        
+                    </div>
+
+        <?php
+                }
+            } else {
+                echo "Unable to load results";
+            }
+        }
+
+        ?>
+
     </div>
 
 

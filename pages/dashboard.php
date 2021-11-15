@@ -101,9 +101,6 @@ $name = substr($username, 0, strpos($username, "@"));
 
             print_r($items);
 
-
-            // header("Location: ../pages/dashboard.php");
-            // exit;
         }
 
         ?>
