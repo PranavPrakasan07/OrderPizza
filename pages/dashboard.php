@@ -10,10 +10,36 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/carousal.css">
+    <link rel="stylesheet" href="../css/specials_carousal.css">
     <link rel="stylesheet" href="../css/navbar.css">
 
 </head>
+
+
+<?php
+
+function addItem($conn, $username)
+{
+
+    echo "Called!";
+    $item_name = $_COOKIE['order'];
+
+    // Check connection
+    if (!$conn) {
+        echo "Connection failed: " . mysqli_connect_error();
+    } else {
+        $sql = "INSERT INTO orders(username, itemname)  VALUES ('$username', '$item_name')";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Success";
+            exit;
+        } else {
+            echo "Query error : " . mysqli_error($conn);
+        }
+    }
+}
+
+?>
 
 <?php
 $servername = "localhost";
@@ -72,38 +98,59 @@ $name = substr($username, 0, strpos($username, "@"));
 
             <a href="../index.php">Home</a>
             <a href="#contact">Contact</a>
-            <a href="#"><?php echo "Hi " . $name . "!" ?></a>
             <a href="../pages/logout.php">Logout</a>
+            <a href="#"><?php echo "Hi " . $name . "!" ?></a>
 
         </div>
     </center>
 
+    <p class="content">Recommended</p>
 
-    <div class="flex-container">
+    <!-- Carousal starts here -->
+
+
+    <div class="carousal-container">
 
         <?php
+        // for ($x = 0; $x <= 10; $x++) {
+
         $sql = "";
         // Check connection
         if (!$conn) {
             echo "Connection failed: " . mysqli_connect_error();
         } else {
-            echo "Connected successfully done!" . "<br>";
 
-            $sql = 'SELECT * FROM items';
+            $sql = 'SELECT `item_name`, `price`, `discount`, `ingredients` FROM items';
 
             $result = mysqli_query($conn, $sql);
 
-            $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                $id = 0;
+                while ($row = $result->fetch_assoc()) {
+                    $id = $id + 1;
+        ?>
+                    <div class="carousal-item" id="<?php echo $id ?>" onclick="clickCard(this)">
 
-            mysqli_free_result($result);
+                        <p id="itemname<?php echo $id ?>" class="item_text"><?php echo $row["item_name"] ?></p><br>
+                        <p id="price<?php echo $id ?>" class="item_text"><?php echo "₹" . $row["price"] ?></p>
+                        <p id="ingredients<?php echo $id ?>" class="item_text"><?php echo $row["ingredients"] ?></p>
 
-            mysqli_close($conn);
+                    </div>
 
-            print_r($items);
-
+        <?php
+                }
+            } else {
+                echo "Unable to load results";
+            }
         }
 
         ?>
+
+    </div>
+
+
+    <div class="flex-container">
 
     </div>
 
@@ -185,6 +232,19 @@ $name = substr($username, 0, strpos($username, "@"));
     </script>
     <!-- Toggle Navbar Script ends here -->
 
+
+    <script>
+
+        function clickCard(div) {
+            var itemname = document.getElementById('itemname' + div.id).innerHTML;
+            console.log("Added - " + document.getElementById('itemname' + div.id).innerHTML);
+
+            document.cookie = 'order = ' + itemname;
+
+            alert("Successfully added - " + document.getElementById('itemname' + div.id).innerHTML);
+
+        }
+    </script>
 </body>
 
 </html>

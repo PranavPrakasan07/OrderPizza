@@ -17,11 +17,23 @@
   margin: 32px;
   height: max-content;
   border-radius: 10px;
-  width: 20%;
+  width: 25%;
+  cursor: pointer;
 }
 
 .item_text{
   color: white;
   font-size: 16px;
   text-align: center;
+}
+
+@media (max-width: 800px) {
+
+  .carousal-container{
+    width: 100vd;
+  }
+
+  .carousal-item{
+    width: 100%;
+  }
 }

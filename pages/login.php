@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../pages/dashboard.php");
                 exit;
             } else {
-                echo "0 results";
+                echo "User not found!";
             }
 
             mysqli_free_result($result);
