@@ -9,10 +9,10 @@
 <!-- Navbar -->
 <center>
     <div class="topnav" id="topnav">
-        <a href="#Home">Home</a>
-        <a href="#Order">Order</a>
-        <a href="#Specials">Specials</a>
-        <a href="#Benefits">Benefits</a>
+        <a href="../index.php">Home</a>
+        <a href="../pages/order.php">Order</a>
+        <a href="../pages/specials.php">Specials</a>
+        <a href="../pages/benefits.php">Benefits</a>
         <a href="#Contact">Contact</a>
         <a href="./pages/login.php"><?php echo $loggedin ?></a>
     </div>

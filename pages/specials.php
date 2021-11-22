@@ -54,7 +54,7 @@ if (isset($_SESSION['loggedin'])) {
 
         <div class="flex-item-right">
 
-            <div class="block_1">
+            <div class="block">
 
                 <p class="sub_title">Specials</p>
                 <p class="content">Find your best choice!</p>
@@ -116,7 +116,7 @@ if (isset($_SESSION['loggedin'])) {
 
     <!-- Footer begins here -->
 
-    <?php include('templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
     <!-- Footer end here -->
 

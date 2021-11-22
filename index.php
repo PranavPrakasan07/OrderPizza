@@ -38,8 +38,45 @@ if (isset($_SESSION['loggedin'])) {
 
     <!-- Floating Action Button ends here -->
 
-    <?php include('templates/navbar.php'); ?>
+    <!-- NavBar Close Button -->
 
+    <div class="hamburger" onclick="toggleNavBar(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <center>
+        <div class="topnav" id="topnav">
+            <a href="#">Home</a>
+            <a href="#Order">Order</a>
+            <a href="#Specials">Specials</a>
+            <a href="#Benefits">Benefits</a>
+            <a href="#Contact">Contact</a>
+            <a href="./pages/login.php"><?php echo $loggedin ?></a>
+        </div>
+    </center>
+
+
+    <!-- Navbar toggle script -->
+    <script>
+        function toggleNavBar(t) {
+
+            toggle(t)
+
+            var x = document.getElementById("topnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function toggle(x) {
+            x.classList.toggle("change");
+        }
+    </script>
 
     <!-- Navbar starts here -->
 
@@ -62,7 +99,7 @@ if (isset($_SESSION['loggedin'])) {
     <div class="flex-container" id="Home">
         <div class="flex-item-left">
 
-            <div id="block_1">
+            <div id="block">
 
                 <p class="title_header">Pizza Maker</p>
                 <p class="tagline">Hungry? Order Now!</p>
@@ -77,7 +114,7 @@ if (isset($_SESSION['loggedin'])) {
     <div class="flex-container" id="Order">
         <div class="flex-item-left">
 
-            <div class="block_1">
+            <div class="block">
 
                 <p class="sub_title">Orders?</p>
                 <p class="content">Get your order at your doorstep!</p>
@@ -97,7 +134,7 @@ if (isset($_SESSION['loggedin'])) {
 
         <div class="flex-item-left" id="Specials">
 
-            <div class="block_1">
+            <div class="block">
 
                 <p class="sub_title">Our Specials</p>
                 <p class="content">Try one today!</p>
@@ -202,7 +239,7 @@ if (isset($_SESSION['loggedin'])) {
 
     <div class="flex-container" id="Benefits">
         <div class="flex-item-left">
-            <div class="block_1">
+            <div class="block">
                 <p class="sub_title">Health? ❤️</p>
                 <p class="content">Enjoy home-made tasty food</p>
                 <div class="black_button"><a href="./pages/benefits.php">Give me Tips</a></div>
@@ -216,8 +253,61 @@ if (isset($_SESSION['loggedin'])) {
 
     <!-- Footer begins here -->
 
-    <?php include('templates/footer.php'); ?>
+    <div class="footer" id="Contact">
+        <div class="flex-container">
 
+            <div class="flex-item-left">
+                <div class="block_1">
+
+                    <br>
+                    <p class="content">Contact Us</p>
+
+                    <div class="icons_block">
+
+                        <a class="icons" href="#"><img src="images/icons/facebook.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="images/icons/github.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="images/icons/instagram.svg" width="32px" height="32px"></a>
+
+                    </div>
+
+                    <div class="icons_block">
+
+                        <a class="icons" href="#"><img src="images/icons/google.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="images/icons/linkedin.svg" width="32px" height="32px"></a>
+                        <a class="icons" href="#"><img src="images/icons/youtube.svg" width="32px" height="32px"></a>
+
+                    </div>
+
+
+                    <p class="content">Subscribe</p>
+
+                    <div class="subscribe">
+                        <input class="footer_input" type="email" name="email" placeholder="me@gmail.com">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="flex-item-right">
+                <div class="block_1">
+
+                    <p class="sub_title">Hungry?</p>
+                    <p class="content">We got you covered!</p>
+
+                    <br>
+                    <hr>
+                    <br>
+
+                    <center>
+                        <p class="small_text"><a href="./pages/credits.php">Credits</a></p>
+                    </center>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Footer end here -->
 
 

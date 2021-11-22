@@ -1,7 +1,7 @@
 /* Style tab links */
 
-.tab_buttons{
-    display:flex;
+.tab_buttons {
+    display: flex;
     flex-direction: row;
     align-items: center;
     width: 50vw;
@@ -14,9 +14,9 @@
     float: left;
     border: none;
     outline: none;
-    cursor:pointer;
+    cursor: pointer;
     align-items: center;
-    display:block;
+    display: block;
     padding: 14px 16px;
     font-size: 17px;
     width: 25vw;
@@ -35,20 +35,4 @@
     padding: 20px 20px;
     height: 100%;
     margin: 4px 16px 4px 16px;
-
-}
-
-label{
-    font-size: 16px;
-}
-
-.form_input{
-    border-color: black;
-    border: 2px;
-    margin: 4px 16px 4px 16px;
-    text-align: center;
-    padding: 4px 16px 4px 16px;
-    font-size: 16px;
-    border-radius: 25px;
-    font-family: 'Poppins', sans-serif;
 }

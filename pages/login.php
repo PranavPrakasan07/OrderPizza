@@ -268,7 +268,7 @@ function validateData($data)
 
     <!-- Footer begins here -->
 
-    <?php include('templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
     <!-- Footer end here -->
 
@@ -280,7 +280,6 @@ function validateData($data)
 
             document.getElementById('signin_header').className = 'tagline_active'
             document.getElementById('login_header').className = 'tagline_inactive'
-
         }
 
         function enableLogin(x) {

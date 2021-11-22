@@ -96,7 +96,7 @@ $name = substr($username, 0, strpos($username, "@"));
 
     <!-- Footer begins here -->
 
-    <?php include('templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
     <!-- Footer end here -->
 

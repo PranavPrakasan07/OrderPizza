@@ -9,17 +9,17 @@
 
                 <div class="icons_block">
 
-                    <a class="icons" href="#"><img src="images/icons/facebook.svg" width="32px" height="32px"></a>
-                    <a class="icons" href="#"><img src="images/icons/github.svg" width="32px" height="32px"></a>
-                    <a class="icons" href="#"><img src="images/icons/instagram.svg" width="32px" height="32px"></a>
+                    <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px" height="32px"></a>
+                    <a class="icons" href="#"><img src="../images/icons/github.svg" width="32px" height="32px"></a>
+                    <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px" height="32px"></a>
 
                 </div>
 
                 <div class="icons_block">
 
-                    <a class="icons" href="#"><img src="images/icons/google.svg" width="32px" height="32px"></a>
-                    <a class="icons" href="#"><img src="images/icons/linkedin.svg" width="32px" height="32px"></a>
-                    <a class="icons" href="#"><img src="images/icons/youtube.svg" width="32px" height="32px"></a>
+                    <a class="icons" href="#"><img src="../images/icons/google.svg" width="32px" height="32px"></a>
+                    <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px" height="32px"></a>
+                    <a class="icons" href="#"><img src="../images/icons/youtube.svg" width="32px" height="32px"></a>
 
                 </div>
 
@@ -45,7 +45,7 @@
                 <br>
 
                 <center>
-                    <p class="small_text"><a href="./pages/credits.php">Credits</a></p>
+                    <p class="small_text"><a href="../pages/credits.php">Credits</a></p>
                 </center>
 
             </div>

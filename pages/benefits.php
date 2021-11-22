@@ -23,6 +23,7 @@
 
     <!-- Floating Action Button ends here -->
 
+    
     <?php include('../templates/navbar.php'); ?>
 
 
@@ -30,14 +31,13 @@
 
         <div class="flex-item-left">
 
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets2.lottiefiles.com/packages/lf20_qX4zwY.json" background="transparent" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
 
         </div>
 
         <div class="flex-item-right">
 
-            <div class="block_1">
+            <div class="block">
 
                 <p class="sub_title">Tips</p>
                 <p class="content">Eat healthy!</p>
@@ -52,14 +52,13 @@
 
         <div class="flex-item-left">
 
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets8.lottiefiles.com/packages/lf20_YnsM0o.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
 
         </div>
 
         <div class="flex-item-right">
 
-            <div class="block_1">
+            <div class="block">
 
                 <p class="content">Base your meals on higher fibre starchy carbohydrates</p>
                 <p class="small_text">Starchy carbohydrates should make up just over a third of the food you eat. They include potatoes, bread, rice, pasta and cereals.</p>
@@ -74,14 +73,13 @@
 
         <div class="flex-item-left">
 
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
             <lottie-player class="figma_lottie" src="https://assets10.lottiefiles.com/temp/lf20_cEITBI.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
 
         </div>
 
         <div class="flex-item-right">
 
-            <div class="block_1">
+            <div class="block">
                 <p class="content">Eat lots of fruit and veg</p>
                 <p class="small_text">It's recommended that you eat at least 5 portions of a variety of fruit and veg every day. They can be fresh, frozen, canned, dried or juiced.</p>
 
@@ -92,9 +90,11 @@
 
     <!-- Footer begins here -->
 
-    <?php include('templates/footer.php'); ?>
+    <?php include('../templates/footer.php'); ?>
 
     <!-- Footer end here -->
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </body>
 
