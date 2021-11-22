@@ -2,45 +2,29 @@
 
 <html>
 
+<!-- 
+    Pranav Prakasan
+    19BCI0007
+    11.11.2021 
+-->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Welcome</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/form.css">
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
     <script src="../js/userAuth.js"></script>
 
 </head>
 
 <?php
-$servername = "localhost";
-$username = "pranav";
-$password = "abc.1234";
-$dbname = "order_pizza";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-    echo "Connection failed: " . mysqli_connect_error();
-} else {
-    echo "Connected successfully with DB";
-}
-
-?>
-
-
-<?php
-
+include('../config/db-connect.php');
 
 session_start();
 
@@ -104,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_free_result($result);
 
             mysqli_close($conn);
-
         }
     } else if (($s_username != "" && $s_password != "" && $s_mno != "")) {
         echo "Signup";
