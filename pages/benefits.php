@@ -8,6 +8,7 @@
     <title>Benefits</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/carousal.css">
     <link rel="stylesheet" href="../css/navbar.css">
@@ -15,7 +16,6 @@
 </head>
 
 <body>
-
 
     <!-- Floating Action Button starts here -->
 
@@ -104,63 +104,12 @@
         </div>
     </div>
 
-
     <!-- Footer begins here -->
-    <div class="footer">
-        <div class="flex-container" id="contact">
 
-            <div class="flex-item-left">
-                <div class="block"><br>
-                    <p class="content">Contact Us</p>
+    <?php include('templates/footer.php'); ?>
 
-                    <div class="icons_block">
-
-                        <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/github.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px" height="32px"></a>
-
-                    </div>
-
-                    <div class="icons_block">
-
-                        <a class="icons" href="#"><img src="../images/icons/google.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/youtube.svg" width="32px" height="32px"></a>
-
-                    </div>
-
-
-                    <p class="content">Subscribe</p>
-                    <br>
-
-                    <div class="subscribe">
-                        <input type="email" name="email" placeholder="me@gmail.com">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="flex-item-right">
-                <div class="block_1">
-
-                    <p class="sub_title">Need Help?</p>
-                    <p class="content">Mail us your thoughts!</p>
-
-                    <br>
-                    <hr>
-                    <br>
-
-                    <center>
-                        <p class="small_text"><a href="../pages/credits.html">Credits</a></p>
-                    </center>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
     <!-- Footer end here -->
+
 
 
 

@@ -106,11 +106,11 @@ if (isset($_SESSION['loggedin'])) {
 
         ?>
                     <div class="carousal-item">
-                        
+
                         <p id="itemname" class="item_text"><?php echo $row["item_name"] ?></p><br>
                         <p id="price" class="item_text"><?php echo "₹" . $row["price"] ?></p>
                         <p id="ingredients" class="item_text"><?php echo $row["ingredients"] ?></p>
-                        
+
                     </div>
 
         <?php
@@ -130,6 +130,12 @@ if (isset($_SESSION['loggedin'])) {
     <!-- Carousal Script begins here -->
 
     <!-- Carousal Script ends here -->
+
+    <!-- Footer begins here -->
+
+    <?php include('templates/footer.php'); ?>
+
+    <!-- Footer end here -->
 
     <!-- Navbar toggle script -->
 

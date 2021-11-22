@@ -67,70 +67,13 @@
         </div>
     </div>
 
-
     <br>
-
-
     <br>
 
     <!-- Footer begins here -->
 
-    <div class="footer">
-        <div class="flex-container">
+    <?php include('templates/footer.php'); ?>
 
-            <div class="flex-item-left">
-                <div class="block_1">
-
-                    <br>
-                    <p class="content">Contact Us</p>
-
-                    <div class="icons_block">
-
-                        <a class="icons" href="#"><img src="../images/icons/facebook.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/github.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/instagram.svg" width="32px" height="32px"></a>
-
-                    </div>
-
-                    <div class="icons_block">
-
-                        <a class="icons" href="#"><img src="../images/icons/google.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/linkedin.svg" width="32px" height="32px"></a>
-                        <a class="icons" href="#"><img src="../images/icons/youtube.svg" width="32px" height="32px"></a>
-
-                    </div>
-
-
-                    <p class="content">Subscribe</p>
-
-
-                    <div class="subscribe">
-                        <input type="email" class="footer_input" name="email" placeholder="me@gmail.com">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="flex-item-right">
-                <div class="block_1">
-
-                    <p class="sub_title">New ideas?</p>
-                    <p class="content">Mail us your thoughts!</p>
-
-                    <br>
-                    <hr>
-                    <br>
-
-                    <center>
-                        <p class="small_text"><a href="pages/credits.html">Credits</a></p>
-                    </center>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
     <!-- Footer end here -->
 
 </body>
