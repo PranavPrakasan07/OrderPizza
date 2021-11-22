@@ -67,24 +67,8 @@ $name = substr($username, 0, strpos($username, "@"));
     <!-- Up Button -->
     <a id="floating_button" href="#"><img src="../images/icons/up_arrow.svg"></a>
 
-    <!-- NavBar Toggle Button -->
-    <div class="hamburger" onclick="toggleNavBar(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
+    <?php include('../templates/navbar.php'); ?>
 
-    <!-- Navbar -->
-    <center>
-        <div class="topnav" id="topnav">
-
-            <a href="../index.php">Home</a>
-            <a href="#contact">Contact</a>
-            <a href="../pages/logout.php">Logout</a>
-            <a href="#"><?php echo "Hi " . $name . "!" ?></a>
-
-        </div>
-    </center>
 
     <p class="content">Recommended</p>
 
@@ -142,28 +126,6 @@ $name = substr($username, 0, strpos($username, "@"));
     <?php include('templates/footer.php'); ?>
 
     <!-- Footer end here -->
-
-
-    <!-- Toggle Navbar Script starts here -->
-    <script>
-        function toggleNavBar(t) {
-
-            toggle(t)
-
-            var x = document.getElementById("topnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-        function toggle(x) {
-            x.classList.toggle("change");
-        }
-    </script>
-    <!-- Toggle Navbar Script ends here -->
-
 
     <script>
         function clickCard(div) {

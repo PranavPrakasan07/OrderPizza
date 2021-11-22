@@ -40,25 +40,8 @@ if (isset($_SESSION['loggedin'])) {
 
     <!-- Floating Action Button ends here -->
 
-    <!-- NavBar Close Button -->
-    <div class="hamburger" onclick="toggleNavBar(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+    <?php include('../templates/navbar.php'); ?>
 
-    </div>
-
-    <!-- Navbar -->
-    <center>
-        <div class="topnav" id="topnav">
-
-            <a href="../index.php">Home</a>
-            <a href="#Order">Order</a>
-            <a href="#Contact">Contact</a>
-            <a href="login.php"><?php echo $loggedin ?></a>
-
-        </div>
-    </center>
 
     <div class="flex-container" id="Benefits">
 
@@ -138,25 +121,6 @@ if (isset($_SESSION['loggedin'])) {
     <!-- Footer end here -->
 
     <!-- Navbar toggle script -->
-
-    <script>
-        function toggleNavBar(t) {
-
-            toggle(t)
-
-            var x = document.getElementById("topnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-        function toggle(x) {
-            x.classList.toggle("change");
-        }
-    </script>
-
 
 </body>
 

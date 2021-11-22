@@ -38,25 +38,8 @@ if (isset($_SESSION['loggedin'])) {
 
     <!-- Floating Action Button ends here -->
 
-    <!-- NavBar Close Button -->
+    <?php include('templates/navbar.php'); ?>
 
-    <div class="hamburger" onclick="toggleNavBar(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div>
-
-    <!-- Navbar -->
-    <center>
-        <div class="topnav" id="topnav">
-            <a href="#Home">Home</a>
-            <a href="#Order">Order</a>
-            <a href="#Specials">Specials</a>
-            <a href="#Benefits">Benefits</a>
-            <a href="#Contact">Contact</a>
-            <a href="./pages/login.php"><?php echo $loggedin ?></a>
-        </div>
-    </center>
 
     <!-- Navbar starts here -->
 
@@ -236,26 +219,6 @@ if (isset($_SESSION['loggedin'])) {
     <?php include('templates/footer.php'); ?>
 
     <!-- Footer end here -->
-
-
-    <!-- Navbar toggle script -->
-    <script>
-        function toggleNavBar(t) {
-
-            toggle(t)
-
-            var x = document.getElementById("topnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-
-        function toggle(x) {
-            x.classList.toggle("change");
-        }
-    </script>
 
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
