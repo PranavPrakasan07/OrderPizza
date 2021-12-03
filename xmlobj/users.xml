@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<database name="order_pizza">
+    <!-- Table users -->
+    <table name="users">
+        <column name="Username">a1@gmail.com</column>
+        <column name="Password">1234</column>
+        <column name="Contact">8080808080</column>
+    </table>
+    <table name="users">
+        <column name="Username">a2@gmail.com</column>
+        <column name="Password">abcdef</column>
+        <column name="Contact">8080808080</column>
+    </table>
+    <table name="users">
+        <column name="Username">p123@gmail.com</column>
+        <column name="Password">abcd</column>
+        <column name="Contact">8080808081</column>
+    </table>
+    <table name="users">
+        <column name="Username">p1@gmail.com</column>
+        <column name="Password">aaa</column>
+        <column name="Contact">8080808080</column>
+    </table>
+    <table name="users">
+        <column name="Username">p@gmail.com</column>
+        <column name="Password">abcdefg</column>
+        <column name="Contact">9191919191</column>
+    </table>
+    <table name="users">
+        <column name="Username">pp1@gmail.com</column>
+        <column name="Password">abcde</column>
+        <column name="Contact">8080808080</column>
+    </table>
+    <table name="users">
+        <column name="Username">pp@gmail.com</column>
+        <column name="Password">abcd</column>
+        <column name="Contact">8062879283</column>
+    </table>
+    <table name="users">
+        <column name="Username">pr1@gmail.com</column>
+        <column name="Password">abcd</column>
+        <column name="Contact">8080808080</column>
+    </table>
+</database>

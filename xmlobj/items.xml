@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    - Database: 'order_pizza'
+    -->
+<database name="order_pizza">
+    <!-- Table items -->
+    <table name="items">
+        <column name="item_id">1</column>
+        <column name="item_name">Zinger</column>
+        <column name="price">149</column>
+        <column name="discount">0</column>
+        <column name="ingredients">Chicken, Olives</column>
+    </table>
+    <table name="items">
+        <column name="item_id">2</column>
+        <column name="item_name">Chicken Fiesta</column>
+        <column name="price">299</column>
+        <column name="discount">0</column>
+        <column name="ingredients">Chicken, Tikka</column>
+    </table>
+    <table name="items">
+        <column name="item_id">3</column>
+        <column name="item_name">Margarita</column>
+        <column name="price">99</column>
+        <column name="discount">0</column>
+        <column name="ingredients">Mushroom, Cheese</column>
+    </table>
+    <table name="items">
+        <column name="item_id">4</column>
+        <column name="item_name">Triple Treat</column>
+        <column name="price">299</column>
+        <column name="discount">0</column>
+        <column name="ingredients">Nuggets, Mushroom</column>
+    </table>
+    <table name="items">
+        <column name="item_id">5</column>
+        <column name="item_name">Corn Delight</column>
+        <column name="price">99</column>
+        <column name="discount">0</column>
+        <column name="ingredients">Corn, Cheese</column>
+    </table>
+</database>
