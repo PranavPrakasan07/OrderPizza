@@ -6,6 +6,7 @@
     <div class="bar3"></div>
 </div>
 
+
 <!-- Navbar -->
 <center>
     <div class="topnav" id="topnav">
@@ -14,13 +15,27 @@
         <a href="../pages/specials.php">Specials</a>
         <a href="../pages/benefits.php">Benefits</a>
         <a href="#Contact">Contact</a>
-        <a href="./pages/login.php"><?php echo $loggedin ?></a>
+        <a id="navbar-login" onclick="checkLogin()">Login</a>
     </div>
 </center>
 
 
 <!-- Navbar toggle script -->
 <script>
+    function checkLogin() {
+
+        var text = "";
+
+        if (document.getElementById("navbar-login").textContent == "Login") {
+            text = "Login";
+            location.href = "../pages/login.php";            
+        } else {
+            location.href = "../pages/dashboard.php";
+        }
+        document.getElementById("navbar-login").textContent = text;
+
+    }
+
     function toggleNavBar(t) {
 
         toggle(t)

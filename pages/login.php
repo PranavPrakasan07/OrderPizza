@@ -2,12 +2,6 @@
 
 <html>
 
-<!-- 
-    Pranav Prakasan
-    19BCI0007
-    11.11.2021 
--->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -147,8 +141,57 @@ function validateData($data)
     <!-- Up Button -->
     <a id="floating_button" href="#"><img src="../images/icons/up_arrow.svg"></a>
 
-    <?php include('../templates/navbar.php'); ?>
+    <!-- NavBar Close Button -->
 
+    <div class="hamburger" onclick="toggleNavBar(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+
+    <!-- Navbar -->
+    <center>
+        <div class="topnav" id="topnav">
+            <a href="../index.php">Home</a>
+            <a href="#Contact">Contact</a>
+            <!-- <a id="navbar-login" onclick="checkLogin()">Login</a> -->
+        </div>
+    </center>
+
+
+    <!-- Navbar toggle script -->
+    <script>
+        function checkLogin() {
+
+            var text = "";
+
+            if (document.getElementById("navbar-login").textContent == "Login") {
+                text = "Login";
+                location.href = "../pages/login.php";
+            } else {
+                location.href = "../pages/dashboard.php";
+            }
+            document.getElementById("navbar-login").textContent = text;
+
+        }
+
+        function toggleNavBar(t) {
+
+            toggle(t)
+
+            var x = document.getElementById("topnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function toggle(x) {
+            x.classList.toggle("change");
+        }
+    </script>
 
     <div class="flex-container">
         <div class="flex-item-left">
