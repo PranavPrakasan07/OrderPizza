@@ -13,6 +13,28 @@
     <link rel="stylesheet" href="../css/specials_carousal.css">
     <link rel="stylesheet" href="../css/navbar.css">
 
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .confirm_button{
+            color: #D6EEEE;
+        }
+
+        /* tr:nth-child(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+        } */
+        tr:hover {background-color: #D6EEEE;}
+
+        /* th:nth-child(even),
+        td:nth-child(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+        } */
+    </style>
+
 </head>
 
 
@@ -48,7 +70,7 @@ include('../config/db-connect.php');
 <?php
 
 // delete record
-if( isset( $_POST['update'] ) ) {
+if (isset($_POST['update'])) {
 
     $oid = $_POST['id'];
     // $query = $link->prepare( "UPDATE orders SET delivered=1 WHERE order_id=?" );
@@ -57,7 +79,6 @@ if( isset( $_POST['update'] ) ) {
 
     $query = "UPDATE orders SET delivered=1 WHERE order_id=$oid";
     $result = mysqli_query($conn, $query);
-
 }
 
 ?>
@@ -104,7 +125,7 @@ if( isset( $_POST['update'] ) ) {
         }
     </script>
 
-    <p class="content" align= center>Orders</p>
+    <p class="content" align=center>Orders</p>
 
     <br>
 
