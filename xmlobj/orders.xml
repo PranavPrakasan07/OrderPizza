@@ -10,41 +10,56 @@
         <column name="username">p@gmail.com</column>
         <column name="itemname">Triple Treat</column>
         <column name="timestamp">2021-11-15 13:12:50</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
     </table>
     <table name="orders">
         <column name="order_id">34</column>
         <column name="username">p@gmail.com</column>
         <column name="itemname">Zinger</column>
         <column name="timestamp">2021-11-15 13:12:50</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
     </table>
     <table name="orders">
         <column name="order_id">35</column>
         <column name="username">p@gmail.com</column>
         <column name="itemname">Triple Treat</column>
         <column name="timestamp">2021-11-15 13:19:28</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
     </table>
     <table name="orders">
         <column name="order_id">36</column>
         <column name="username">p@gmail.com</column>
         <column name="itemname">Triple Treat</column>
         <column name="timestamp">2021-11-15 13:19:28</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
     </table>
     <table name="orders">
         <column name="order_id">37</column>
         <column name="username">p@gmail.com</column>
         <column name="itemname">Margarita</column>
         <column name="timestamp">2021-11-15 13:19:28</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
     </table>
     <table name="orders">
         <column name="order_id">38</column>
         <column name="username">p@gmail.com</column>
         <column name="itemname">Triple Treat</column>
         <column name="timestamp">2021-11-15 13:19:29</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
     </table>
     <table name="orders">
         <column name="order_id">39</column>
         <column name="username">p@gmail.com</column>
         <column name="itemname">Triple Treat</column>
         <column name="timestamp">2021-11-15 13:19:29</column>
+        <column name="dispatch">1</column>
+        <column name="delivered">0</column>
+
     </table>
 </database>

@@ -43,7 +43,6 @@
 function addItem($conn, $username)
 {
 
-    echo "Called!";
     $item_name = $_COOKIE['order'];
 
     // Check connection
