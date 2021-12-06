@@ -50,21 +50,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $s_error_mno = validateData($s_mno);
 
     if (($l_username != "" && $l_password != "" && $l_mno != "")) {
-        echo "Login";
+        // echo "Login";
 
         $_SESSION['username'] = $l_username;
         $_SESSION['password'] = sha1($l_password . $salt);
         $_SESSION['mobile'] = $l_mno;
         $_SESSION['loggedin'] = true;
 
+        $username_entered = $_SESSION['username'];
+        $password_entered = sha1($l_password . $salt);
+
         $sql = "";
         // Check connection
         if (!$conn) {
             echo "Connection failed: " . mysqli_connect_error();
         } else {
-            echo "Connected successfully done!" . "<br>";
+            // echo "Connected successfully done!" . "<br>";
 
-            $sql = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password';";
+            $sql = "SELECT * FROM users WHERE Username = '$username_entered' AND Password = '$password_entered';";
 
             $result = mysqli_query($conn, $sql);
 
@@ -73,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "Success" . "<br>";
                 }
-                header("Location: ../pages/dashboard.php");
+                header("Location: dashboard.php");
                 exit;
             } else {
                 echo "User not found!";
@@ -91,17 +94,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['mobile'] = $s_mno;
         $_SESSION['loggedin'] = true;
 
+        $username_entered = $_SESSION['username'];
+        $password_entered = sha1($s_password . $salt);
+        $contact_entered = $_SESSION['mobile'];
+
+
         // Check connection
         if (!$conn) {
             echo "Connection failed: " . mysqli_connect_error();
         } else {
             echo "Connected successfully done";
 
-            $sql = "INSERT INTO users(Username, Password, Contact)  VALUES ('$s_username', '$s_password', '$s_mno')";
+            $sql = "INSERT INTO users(Username, Password, Contact)  VALUES ('$username_entered', '$password_entered', '$contact_entered')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "Success";
-                header("Location: ../pages/dashboard.php");
+                header("Location: dashboard.php");
                 exit;
             } else {
                 echo "Query error : " . mysqli_error($conn);

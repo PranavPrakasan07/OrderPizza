@@ -28,7 +28,7 @@ function addItem($conn, $username)
     if (!$conn) {
         echo "Connection failed: " . mysqli_connect_error();
     } else {
-        $sql = "INSERT INTO orders(username, itemname)  VALUES ('$username', '$item_name')";
+        $sql = "INSERT INTO orders(username, itemname, dispatch, delivered)  VALUES ('$username', '$item_name', 1, 0)";
 
         if (mysqli_query($conn, $sql)) {
             echo "Success";
@@ -62,62 +62,63 @@ $name = substr($username, 0, strpos($username, "@"));
 
 <body>
 
-    <?php echo $_SESSION['username']; ?>
+    <!-- <//?php echo $_SESSION['username']; ?> -->
 
+    
     <!-- Up Button -->
     <a id="floating_button" href="#"><img src="../images/icons/up_arrow.svg"></a>
 
-<!-- NavBar Close Button -->
+    <!-- NavBar Close Button -->
 
-<div class="hamburger" onclick="toggleNavBar(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-</div>
-
-
-<!-- Navbar -->
-<center>
-    <div class="topnav" id="topnav">
-        <a href="../index.php">Home</a>
-        <a href="#Contact">Contact</a>
-        <!-- <a id="navbar-login" onclick="checkLogin()">Login</a> -->
+    <div class="hamburger" onclick="toggleNavBar(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
-</center>
 
 
-<!-- Navbar toggle script -->
-<script>
-    function checkLogin() {
+    <!-- Navbar -->
+    <center>
+        <div class="topnav" id="topnav">
+            <a href="../index.php">Home</a>
+            <a href="#Contact">Contact</a>
+            <a href="logout.php">Logout</a>
+            <!-- <a id="navbar-login" onclick="checkLogin()">Login</a> -->
+        </div>
+    </center>
 
-        var text = "";
+    <!-- Navbar toggle script -->
+    <script>
+        function checkLogin() {
 
-        if (document.getElementById("navbar-login").textContent == "Login") {
-            text = "Login";
-            location.href = "../pages/login.php";            
-        } else {
-            location.href = "../pages/dashboard.php";
+            var text = "";
+
+            if (document.getElementById("navbar-login").textContent == "Login") {
+                text = "Login";
+                location.href = "../pages/login.php";
+            } else {
+                location.href = "../pages/dashboard.php";
+            }
+            document.getElementById("navbar-login").textContent = text;
+
         }
-        document.getElementById("navbar-login").textContent = text;
 
-    }
+        function toggleNavBar(t) {
 
-    function toggleNavBar(t) {
+            toggle(t)
 
-        toggle(t)
-
-        var x = document.getElementById("topnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
+            var x = document.getElementById("topnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
-    }
 
-    function toggle(x) {
-        x.classList.toggle("change");
-    }
-</script>
+        function toggle(x) {
+            x.classList.toggle("change");
+        }
+    </script>
 
     <p class="content">Recommended</p>
 
@@ -145,7 +146,7 @@ $name = substr($username, 0, strpos($username, "@"));
                 while ($row = $result->fetch_assoc()) {
                     $id = $id + 1;
         ?>
-                    <div class="carousal-item" id="<?php echo $id ?>" onclick="clickCard(this)">
+                    <div class="carousal-item" id="<?php echo $id?>" onclick="clickCard(this)">
 
                         <p id="itemname<?php echo $id ?>" class="item_text"><?php echo $row["item_name"] ?></p><br>
                         <p id="price<?php echo $id ?>" class="item_text"><?php echo "₹" . $row["price"] ?></p>
@@ -185,7 +186,13 @@ $name = substr($username, 0, strpos($username, "@"));
 
             alert("Successfully added - " + document.getElementById('itemname' + div.id).innerHTML);
 
+            writeNew();
         }
+
+        function writeNew(){
+            document.write("<?php addItem($conn, $username); ?>");
+        }
+
     </script>
 </body>
 
